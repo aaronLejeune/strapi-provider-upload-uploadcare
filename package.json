@@ -1,6 +1,6 @@
 {
   "name": "@aaron_lejeune/strapi-provider-upload-uploadcare",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Upload provider for Strapi using UploadCare",
   "main": "./lib",
   "directories": {
