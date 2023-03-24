@@ -1,6 +1,6 @@
 {
   "name": "@aaron_lejeune/strapi-provider-upload-uploadcare",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Upload provider for Strapi using UploadCare",
   "main": "./lib",
   "directories": {
@@ -9,10 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aaronLejeune/-aaron_lejeune-strapi-provider-upload-uploadcare.git"
-  },
+  "repository": "git+https://github.com/aaronLejeune/strapi-provider-upload-uploadcare.git",
   "keywords": [
     "strapi",
     "uploadcare",
@@ -21,9 +18,9 @@
   "author": "aaron lejeune",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aaronLejeune/-aaron_lejeune-strapi-provider-upload-uploadcare/issues"
+    "url": "https://github.com/aaronLejeune/strapi-provider-upload-uploadcare/issues"
   },
-  "homepage": "https://github.com/aaronLejeune/-aaron_lejeune-strapi-provider-upload-uploadcare#readme",
+  "homepage": "https://github.com/aaronLejeune/strapi-provider-upload-uploadcare#readme",
   "dependencies": {
     "@uploadcare/upload-client": "^1.1.5",
     "axios": "^0.21.0"
