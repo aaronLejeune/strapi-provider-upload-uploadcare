@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/aaronLejeune/strapi-provider-upload-uploadcare#readme",
   "dependencies": {
-    "@aaron_lejeune/strapi-provider-upload-uploadcare": "^1.0.1",
     "@uploadcare/upload-client": "^1.1.5",
     "axios": "^0.21.0"
   },
