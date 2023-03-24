@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "node lib/index.js"
   },
   "repository": "git+https://github.com/aaronLejeune/strapi-provider-upload-uploadcare.git",
   "keywords": [
@@ -31,5 +32,6 @@
   },
   "strapi": {
     "isProvider": true
-  }
+  },
+  "type": "module"
 }
