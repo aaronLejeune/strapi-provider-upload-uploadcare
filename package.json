@@ -4,7 +4,7 @@
   "description": "Upload provider for Strapi using UploadCare",
   "main": "./lib",
   "directories": {
-    "lib": "lib"
+    "lib": "./lib"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -33,5 +33,5 @@
   "strapi": {
     "isProvider": true
   },
-  "type": "module"
+  "type": "commonjs"
 }
