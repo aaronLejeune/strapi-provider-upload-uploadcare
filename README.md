@@ -1,15 +1,5 @@
 # @aaron_lejeune/strapi-provider-upload-uploadcare
 
-## Resources
-
-- [LICENSE](LICENSE)
-
-## Links
-
-- [Strapi website](https://strapi.io/)
-- [Strapi documentation](https://docs.strapi.io)
-- [Strapi community on Discord](https://discord.strapi.io)
-- [Strapi news on Twitter](https://twitter.com/strapijs)
 
 ## Installation
 
@@ -42,7 +32,7 @@ module.exports = ({ env }) => ({
   // ...
   upload: {
     config: {
-      provider: 'strapi-provider-upload-uploadcare',
+      provider: '@aaron_lejeune/strapi-provider-upload-uploadcare',
       providerOptions: {
         public_key: env('UPLOADCARE_PUBLIC_KEY'),
         secret_key: env('UPLOADCARE_SECRET_KEY'),
@@ -64,7 +54,16 @@ Defines your schema and CDN domain. Can be changed to one of the predefined valu
 
 Defaults to `https://ucarecdn.com/`.
 
-### Security Middleware Configuration
+## BONUS: Turn off Strapi's "Responsive friendly upload"
+
+Because Uploadcare is already handling responsive uploads, file optimisation, ... we dont need Strapi to be uploading the file in different sizes. This will just fill the UploadCare CDN with images/versions we're never going to use. 
+
+To turn off this feature, go to your Strapi admin panel -> Settings -> Media Library:
+- Responsive friendly upload: ```False```
+- Size optimization: ```False```
+- Auto orientation: ```False```
+
+## Security Middleware Configuration
 
 Due to the default settings in the Strapi Security Middleware you will need to modify the `contentSecurityPolicy` settings to properly see thumbnail previews in the Media Library. You should replace `strapi::security` string with the object bellow instead as explained in the [middleware configuration](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/configurations/required/middlewares.html#loading-order) documentation.
 
@@ -84,15 +83,19 @@ module.exports = [
             'self'", 
             'data:', 
             'blob:', 
+            'market-assets.strapi.io',
             'ucarecdn.com', //uploadcare 
             '-- your custom base_cdn', //custom base_cdn
+            // ...
           ],
           'media-src': ["
             'self'", 
             'data:', 
             'blob:', 
+            'market-assets.strapi.io',
             'ucarecdn.com', //uploadcare 
             '-- your custom base_cdn', //custom base_cdn
+            // ...
           ],
           upgradeInsecureRequests: null,
         },
@@ -102,3 +105,14 @@ module.exports = [
   // ...
 ];
 ```
+
+## Resources
+
+- [LICENSE](LICENSE)
+
+## Links
+
+- [Strapi website](https://strapi.io/)
+- [Strapi documentation](https://docs.strapi.io)
+- [Strapi community on Discord](https://discord.strapi.io)
+- [Strapi news on Twitter](https://twitter.com/strapijs)
