@@ -16,6 +16,7 @@ npm install @aaron_lejeune/strapi-provider-upload-uploadcare --save
 - `provider` defines the name of the provider
 - `providerOptions` is passed down during the construction of the provider.
 - `actionOptions` is passed directly to each method respectively allowing for custom options. You can find the complete list of [upload/ uploadStream options](https://cloudinary.com/documentation/image_upload_api_reference#upload_optional_parameters) and [delete options](https://cloudinary.com/documentation/image_upload_api_reference#destroy_optional_parameters)
+- `video_size` You can change your video canvas size, quality, format, and length by applying video transform operations. The type must be `array`. More information of all operation can be found [here](https://uploadcare.com/docs/transformations/video-encoding/#operation-size). The default values are ['x720', 'x1024']
 
 See the [documentation about using a provider](https://docs.strapi.io/developer-docs/latest/plugins/upload.html#using-a-provider) for information on installing and using a provider. To understand how environment variables are used in Strapi, please refer to the [documentation about environment variables](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/configurations/optional/environment.html#environment-variables).
 
@@ -37,6 +38,7 @@ module.exports = ({ env }) => ({
         public_key: env('UPLOADCARE_PUBLIC_KEY'),
         secret_key: env('UPLOADCARE_SECRET_KEY'),
         base_cdn: env('UPLOADCARE_BASE_CDN'),
+        video_size: ['x720', 'x1024']
       },
     },
   },
